@@ -6,6 +6,7 @@ class UsuarioControlador{
     public function retornarEstadoCreado($request, $response, $arg){
         $json = $request->getBody();
         $datosUsuario = json_decode($json);
+        //print_r($datosUsuario);
         $objetoUsuario = new Usuario();
         $usuarioLogueado = $objetoUsuario->crearUsuario($datosUsuario);
         $json = json_encode($usuarioLogueado);
@@ -28,6 +29,18 @@ class UsuarioControlador{
         
         $usuarioLogueado = $objetoUsuario->buscarUsuarioLogueado($email);
         $json = json_encode($usuarioLogueado);
+        $response->getBody()->write($json);
+        return $response;
+    }
+
+    public function retonarUsuarioPerfil($request, $response, $arg){   
+        $json = $request->getBody();
+        $datos = json_decode($json); 
+        $email = $datos->email;
+        $objetoUsuario = new Usuario();
+        
+        $usuarioPerfil = $objetoUsuario->buscarPerfilUsuario($email);
+        $json = json_encode($usuarioPerfil);
         $response->getBody()->write($json);
         return $response;
     }

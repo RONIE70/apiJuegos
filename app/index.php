@@ -41,6 +41,7 @@ $app->group('/usuarios', function (RouteCollectorProxy $group) {
     $group->post('/traerLogueado', \UsuarioControlador::class . ':retonarUsuarioLogueado');
     $group->put('/actualizarPass', \UsuarioControlador::class . ':retornarActualizacionPass');
     $group->delete('/eliminar', \UsuarioControlador::class . ':retornarEstadoEliminado');
+    $group->post('/perfilUsuario', \UsuarioControlador::class . ':retonarUsuarioPerfil');
 });
 
 $app->group('/games', function (RouteCollectorProxy $group) {

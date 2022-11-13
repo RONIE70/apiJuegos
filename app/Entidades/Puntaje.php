@@ -40,8 +40,10 @@ class Puntaje{
     public function buscarPuntajeUsuario($emailUsuario){
         $id_Usuario = Usuario::buscarIdUsuario($emailUsuario);
         if ($id_Usuario) {
-            $consulta = "SELECT id_usuario, id_game, puntos FROM puntajes
-                         WHERE id_usuario = $id_Usuario";
+            $consulta = "SELECT u.nombre, u.apellido, u.tipo_suscripcion, p.puntos,g.nombre
+            FROM usuarios u
+            INNER JOIN games g ON $id_Usuario = g.id_game
+            INNER JOIN puntajes p ON g.id_game = p.id_game";
 
             $resultadoConsulta = ejecutarConsulta($consulta, __CLASS__);
             return $resultadoConsulta;
