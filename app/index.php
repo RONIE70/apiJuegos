@@ -8,7 +8,8 @@ use Psr\Http\Server\RequestHandlerInterface;
 use Slim\Factory\AppFactory;
 use Slim\Routing\RouteCollectorProxy;
 
-require __DIR__ . '/../vendor/autoload.php';
+//require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/db/consultas.php';
 require __DIR__ . '/Controlador/UsuarioControlador.php';
 require __DIR__ . '/Entidades/Usuario.php';
