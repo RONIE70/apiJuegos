@@ -63,7 +63,7 @@ class Usuario
         $nombre = $datosUsuario->nombre;
         $apellido = $datosUsuario->apellido;
         $tipo_suscripcion = 'gratis';
-        $fecha_nacido = $datosUsuario->fecha_nacido;
+        $fecha_nacido = $datosUsuario->fecha_nacido;   
         $nacionalidad = $datosUsuario->nacionalidad;
         
         $consulta = "INSERT INTO usuarios 
